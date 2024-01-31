@@ -19,7 +19,7 @@ def text_indentation(text):
 
     last_char = ""
     for char in text:
-        if last_char in (".", "?", ":"):
+        if last_char in (".", "?", ":") and char == " ":
             last_char = char
             continue
 
