@@ -1,0 +1,69 @@
+3. Print square
+===============
+
+First import the ```4-print_square``` module
+>>> print_square = __import__("4-print_square").print_square
+
+# Print a square of size 10:
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Print a square of size 4:
+>>> print_square(4)
+####
+####
+####
+####
+
+# Print a square of size 1:
+>>> print_square(1)
+#
+
+# Print a square of size 0:
+>>> print_square(0)
+
+
+# Pass a negative number to the ```print_square``` function:
+>>> print_square(-1)
+Traceback (most recent call last):
+    ...
+TypeError: size must be >= 0
+
+# Pass a float to the ```print_square``` function:
+>>> print_square(4.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+# Pass a negative float to the ```print_square``` function:
+>>> print_square(-4.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+# Pass no argument to function:
+>>> print_square()
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+# Pass float("inf") to function:
+>>> print_square(float("inf"))
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+# Pass float("-inf") to function:
+>>> print_square(float("-inf"))
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
