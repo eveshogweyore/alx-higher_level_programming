@@ -4,23 +4,40 @@
 First import the ```3-say_my_name``` module:
 >>> say_my_name = __import__("3-say_my_name").say_my_name
 
+# Pass two string arguments:
 >>> say_my_name("Eveshogweyore", "Alle")
 My name is Eveshogweyore Alle
 
+# Pass one string argument:
 >>> say_my_name("Eveshogweyore")
 My name is Eveshogweyore 
 
+# Pass one int argumant and one string argument:
 >>> say_my_name(100, "Alle")
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
 
+# Pass one string argument and one integer argument:
 >>> say_my_name("Eveshogweyore", 100)
 Traceback (most recent call last):
     ...
 TypeError: last_name must be a string
 
+# Pass ```None``` as only argument:
 >>> say_my_name(None)
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
+
+# Pass no argument at all:
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+# Pass only the second argument:
+>>> say_my_name(last_name="Alle")
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
