@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This module contains functionality to add two digits."""
 
+
 def add_integer(a, b=98):
     """Function to add two integer  values.
 
@@ -21,5 +22,8 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, int) and not isinstance(b, float):
         raise TypeError("b must be an integer")
-
-    return int(a) + int(b)
+    if a == float("inf") or a == float("-inf"):
+        raise TypeError("a must be an integer")
+    if b == float("inf") or b == float("-inf"):
+        raise TypeError("b must be an integer")
+    return int(a + b)
