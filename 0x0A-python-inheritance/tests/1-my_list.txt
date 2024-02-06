@@ -30,12 +30,14 @@ Print list again:
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
+Sort a list with integers and strings:
 >>> my_list = MyList([1, 2, "xala", 3, "alx"])
 >>> my_list.print_sorted()
 Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'str' and 'int'
 
+Sort a list with integers and NoneType:
 >>> my_list = MyList([1, 2, None, 3])
 >>> my_list.print_sorted()
 Traceback (most recent call last):
