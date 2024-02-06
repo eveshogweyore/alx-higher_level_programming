@@ -55,3 +55,27 @@ Pass no argument:
 Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Pass a valid string and an None:
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+Pass a valid string and a list:
+>>> bg.integer_validator("width", [10])
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+Pass a valid string and a set:
+>>> bg.integer_validator("width", {10, 20})
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+Pass a valid string and a Boolean:
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
