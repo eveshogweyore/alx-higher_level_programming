@@ -1,0 +1,57 @@
+7. Integer validator
+====================
+
+
+First import ```7-base_geometry``` module:
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Create an instance of the class:
+>>> bg = BaseGeometry()
+
+Pass a valid string and an integer:
+>>> bg.integer_validator("John", 19)
+
+Check for errors in the area method:
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+Pass a valid string and an invalid value:
+>>> bg.integer_validator("width", "19")
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+Pass a valid string and a negative number:
+>>> bg.integer_validator("width", -1)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+Pass a valid string and 0:
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+Pass an invalid string and a valid integer.
+>>> bg.integer_validator(None, 2)
+
+Pass only first argument:
+>>> bg.integer_validator(1)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Pass only second argument:
+>>> bg.integer_validator(value=17)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'name'
+
+Pass no argument:
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
