@@ -79,3 +79,9 @@ Pass a valid string and a Boolean:
 Traceback (most recent call last):
     ...
 TypeError: width must be an integer
+
+Pass a valid string and a tuple:
+>>> bg.integer_validator("width", (10, 20))
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
