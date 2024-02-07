@@ -26,6 +26,3 @@ class Rectangle(BaseGeometry):
         self.__height = height
         super().integer_validator("width", self.__width)
         super().integer_validator("height", self.__height)
-
-if __name__ == "__main__":
-    print(issubclass(Rectangle, BaseGeometry))
