@@ -16,6 +16,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """ A Rectangle class that inherits from BaseGeometry class"""
 
@@ -23,5 +24,8 @@ class Rectangle(BaseGeometry):
         """ Called on object instantiation. """
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
+        super().integer_validator("width", self.__width)
+        super().integer_validator("height", self.__height)
+
+if __name__ == "__main__":
+    print(issubclass(Rectangle, BaseGeometry))
