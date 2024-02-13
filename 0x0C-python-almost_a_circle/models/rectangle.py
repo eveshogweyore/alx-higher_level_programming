@@ -108,11 +108,11 @@ class Rectangle(Base):
     def update(self, *args):
         """ Updates the current value of instance variable. """
         instance_vars = [
-        "id", 
-        "_Rectangle__width", 
-        "_Rectangle__height", 
-        "_Rectangle__x", 
-        "_Rectangle__y"
+            "id",
+            "_Rectangle__width",
+            "_Rectangle__height",
+            "_Rectangle__x",
+            "_Rectangle__y"
         ]
         for i in range(len(args)):
             self.__dict__[instance_vars[i]] = args[i]
