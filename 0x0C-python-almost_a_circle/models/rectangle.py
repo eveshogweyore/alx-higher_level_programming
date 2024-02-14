@@ -128,4 +128,15 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ Returns a dictionary representation of rectangle. """
-        return self.__dict__
+        obj_dict = self.__dict__
+        new_dict = {}
+        to_remove = "_Rectangle__"
+
+        for key, value in obj_dict.items():
+            if key.startswith(to_remove):
+                new_key = key[len(to_remove):]
+                new_dict[new_key] = value
+            else:
+                new_dict[key] = value
+
+        return new_dict
