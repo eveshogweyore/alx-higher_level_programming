@@ -37,3 +37,20 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Return dictionary representation of Square. """
+        obj_dict = vars(self)
+        to_remove = "_Rectangle__"
+        new_dict = {}
+
+        for key, value in obj_dict.items():
+            if key.startswith(to_remove):
+                new_key = key[len(to_remove):]
+                if new_key == "width" or new_key == "height":
+                    new_key = "size"
+                new_dict[new_key] = value
+            else:
+                new_dict[key] = value
+
+        return new_dict
