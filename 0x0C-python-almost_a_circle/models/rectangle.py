@@ -125,4 +125,3 @@ class Rectangle(Base):
         else:
             for keys, values in kwargs.items():
                 setattr(self, keys, values)
-                
