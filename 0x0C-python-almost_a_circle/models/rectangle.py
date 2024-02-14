@@ -105,7 +105,7 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Updates the current value of instance variable. """
         """ <INITIAL SOLUTION> --> Hackish not Pythonic :) <--
         instance_vars = [
@@ -118,6 +118,11 @@ class Rectangle(Base):
         for i in range(len(args)):
             self.__dict__[instance_vars[i]] = args[i]
         """
-        instance_vars = ["id", "width", "height", "x", "y"]
-        for i in range(len(args)):
-            setattr(self, instance_vars[i], args[i])
+        if len(args) > 0:
+            instance_vars = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, instance_vars[i], args[i])
+        else:
+            for keys, values in kwargs.items():
+                setattr(self, keys, values)
+                
