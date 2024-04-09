@@ -2,7 +2,7 @@
 
 const { argv } = require('node:process');
 
-if (argv[2] === undefined || argv.length === 3) {
+if (argv[2] === undefined || argv.length < 4) {
   console.log(0);
 } else {
   let max;
@@ -14,7 +14,7 @@ if (argv[2] === undefined || argv.length === 3) {
     max = parseInt(argv[3]); smax = parseInt(argv[2]);
   }
 
-  for (let i = 3; i < argv.length; i++) {
+  for (let i = 4; i < argv.length; i++) {
     if (max < parseInt(argv[i])) {
       smax = max;
       max = parseInt(argv[i]);
