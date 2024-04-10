@@ -19,6 +19,10 @@ if (argv[2] === undefined || argv.length < 4) {
       smax = max;
       max = parseInt(argv[i]);
     }
+
+    if (parseInt(argv[i]) !== max && parseInt(argv[i]) > smax) {
+      smax = parseInt(argv[i]);
+    }
   }
 
   console.log(smax);
