@@ -21,9 +21,9 @@ if __name__ == "__main__":
 
     name = argv[4]
     query = """
-	   SELECT *
-       FROM {}.states WHERE name=%s
-       ORDER BY id ASC
+        SELECT *
+        FROM {}.states WHERE name=%s
+        ORDER BY id ASC
     """.format(argv[3])
 
     cur.execute(query, (name,))
