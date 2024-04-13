@@ -24,7 +24,7 @@ if __name__ == "__main__":
         SELECT *
         FROM {argv[3]}.states
         WHERE SUBSTRING(name, 1, 1)='N'
-        ORDER BY id ASC
+        ORDER BY states.id ASC
     """
 
     cur.execute(query)
