@@ -19,12 +19,12 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     name = argv[4]
-    query = f"""
+    query = """
         SELECT *
-        FROM {argv[3]}.states
-        WHERE name='{name}'
-        ORDER BY id ASC
-    """
+        FROM {}.states
+        WHERE name='{}'
+        ORDER BY states.id ASC
+    """.format(argv[3], name)
 
     cur.execute(query)
     rows = cur.fetchall()
