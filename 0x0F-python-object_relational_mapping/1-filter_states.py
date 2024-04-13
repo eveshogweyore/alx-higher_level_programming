@@ -20,9 +20,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = """
+    query = f"""
         SELECT *
-        FROM hbtn_0e_0_usa.states
+        FROM {argv[3]}.states
         WHERE SUBSTRING(name, 1, 1)='N'
         ORDER BY id ASC
     """
