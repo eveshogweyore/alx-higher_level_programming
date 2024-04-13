@@ -20,12 +20,12 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = f"""
+    query = """
         SELECT *
-        FROM {argv[3]}.states
-        WHERE SUBSTRING(name, 1, 1)='N'
+        FROM {}.states
+        WHERE LEFT(name, 1)='N'
         ORDER BY states.id ASC
-    """
+    """.format(argv[3])
 
     cur.execute(query)
 
