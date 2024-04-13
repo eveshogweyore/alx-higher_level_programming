@@ -2,17 +2,15 @@
 """ A module that lists al states from a database."""
 
 if __name__ == '__main__':
-    import MySQLdb as sql
+    import MySQLdb
     import sys
 
-    argv = sys.argv
-
-    db = sql.connect(
+    db = MySQLdb.connect(
         host='localhost',
         port=3306,
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3]
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
     cur = db.cursor()
