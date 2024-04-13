@@ -8,9 +8,9 @@ if __name__ == '__main__':
     argv = sys.argv
 
     db = sql.connect(
-        host='localhost',
-        user=argv[1],
-        passwd=argv[2],
+        host=argv[1],
+        user=argv[2],
+        passwd='',
         db=argv[3]
     )
 
