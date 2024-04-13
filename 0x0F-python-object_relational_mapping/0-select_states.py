@@ -14,7 +14,7 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM hbtn_0e_0_usa.states ORDER BY states.id ASC")
+    cur.execute("SELECT id, name FROM hbtn_0e_0_usa.states ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
