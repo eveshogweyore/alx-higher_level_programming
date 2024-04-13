@@ -22,7 +22,7 @@ if __name__ == '__main__':
         SELECT *
         FROM {argv[3]}.states
         WHERE name='{name}'
-		ORDER BY id ASC
+        ORDER BY id ASC
     """
 
     cur.execute(query)
