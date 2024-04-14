@@ -18,16 +18,18 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    name = argv[4]
     query = """
         SELECT *
-        FROM {}.states
-        WHERE name='{}'
+        FROM states
+        WHERE BINARY name='{}'
         ORDER BY states.id ASC
-    """.format(argv[3], name)
+    """.format(argv[3], argv[4])
 
     cur.execute(query)
     rows = cur.fetchall()
 
     for row in rows:
         print(row)
+
+    cur.close()
+    conn.close()
