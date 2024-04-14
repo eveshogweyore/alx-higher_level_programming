@@ -23,7 +23,7 @@ if __name__ == "__main__":
     query = """
         SELECT *
         FROM {}.states
-        WHERE LEFT(name, 1)='N'
+        WHERE BINARY SUBSTRING(name, 1, 1)='N'
         ORDER BY states.id ASC
     """.format(argv[3])
 
@@ -32,3 +32,6 @@ if __name__ == "__main__":
     rows = cur.fetchall()
     for row in rows:
         print(row)
+
+    cur.close()
+    db.close()
