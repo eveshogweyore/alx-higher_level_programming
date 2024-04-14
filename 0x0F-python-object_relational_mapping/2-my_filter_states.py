@@ -23,7 +23,7 @@ if __name__ == '__main__':
         FROM states
         WHERE BINARY name='{}'
         ORDER BY states.id ASC
-    """.format(argv[3], argv[4])
+    """.format(argv[4])
 
     cur.execute(query)
     rows = cur.fetchall()
@@ -32,4 +32,4 @@ if __name__ == '__main__':
         print(row)
 
     cur.close()
-    conn.close()
+    db.close()
