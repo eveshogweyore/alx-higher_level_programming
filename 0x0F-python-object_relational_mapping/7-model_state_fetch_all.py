@@ -8,8 +8,6 @@ from sqlalchemy.orm import sessionmaker
 
 db_url = f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
 
-print(db_url)
-
 engine = create_engine(db_url)
 
 Session = sessionmaker(bind=engine)
