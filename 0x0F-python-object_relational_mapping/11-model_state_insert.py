@@ -3,7 +3,7 @@
 
 if __name__ == "__main__":
     from sys import argv
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, Column
     from sqlalchemy.orm import sessionmaker
     from model_state import Base, State
 
@@ -15,5 +15,8 @@ if __name__ == "__main__":
 
     with Session() as session:
         new_state = State(name='Louisiana')
+
         session.add(new_state)
         session.commit()
+
+        print(new_state.id)
