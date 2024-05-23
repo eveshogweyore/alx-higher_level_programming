@@ -2,8 +2,10 @@
 
 const { argv } = require('process');
 const request = require('request-promise-native');
+const util = require('util');
 
 const api = `https://swapi-api.alx-tools.com/api/films/${argv[2]}`;
+const requestPromise = util.promisify(request);
 
 request(api, { json: true }, (error, response, body) => {
   if (error) {
@@ -13,8 +15,9 @@ request(api, { json: true }, (error, response, body) => {
   async function fetchAllData (bc) {
     for (const idx in bc) {
       try {
-        const body = await request({ uri: bc[idx], json: true });
-        console.log(body.name);
+        const res = await requestPromise({ uri: bc[idx], json: true });
+        const resBody = res.body;
+        console.log(resBody.name);
       } catch (err) {
         console.error(err);
       }
