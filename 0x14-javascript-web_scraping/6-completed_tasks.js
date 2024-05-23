@@ -10,11 +10,10 @@ request(argv[2], { json: true }, (error, response, todos) => {
 
   const records = {};
   for (const todo of todos) {
-    if (records[todo.userId] === undefined) {
-      records[todo.userId] = 0;
-    }
-
     if (todo.completed === true) {
+      if (records[todo.userId] === undefined) {
+        records[todo.userId] = 0;
+      }
       records[todo.userId] += 1;
     }
   }
